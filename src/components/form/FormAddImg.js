@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const AddImageWrapper = styled.div`
   margin: 20px 0px;
@@ -72,11 +72,11 @@ export default function FormAddImg({ AddImgType, InputId }) {
   const handleChangeFile = (event) => {
     for (let i = 0; i < event.target.files.length; i++) {
       if (imgNames.includes(event.target.files[i].name)) {
-        const duplicatiedEle = imgNames.filter(
+        const duplicatedEle = imgNames.filter(
           (element) => element !== event.target.files[i].name
         );
-        duplicatiedEle.unshift(event.target.files[i].name);
-        setImgNames(duplicatiedEle);
+        duplicatedEle.unshift(event.target.files[i].name);
+        setImgNames(duplicatedEle);
       } else {
         imgNames.unshift(event.target.files[i].name);
       }
