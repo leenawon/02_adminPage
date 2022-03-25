@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const AddImageButtonWrapper = styled.div`
   width: 100%;
@@ -35,12 +35,12 @@ const AddImageButtonInput = styled.input`
 
 export default function FormImagePreview() {
   const [preview, setPreview] = useState({});
-  const onasdChange = (e) => {
+  const onChange = (e) => {
     if (!e.target.files[0].type.match('image/.*')) {
       alert('이미지 확장자만 업로드 가능합니다.');
       return;
     }
-    setPreview((oldPreveiw) => {
+    setPreview((oldPreview) => {
       const src = URL.createObjectURL(e.target.files[0]);
       const newPreview = { name: e.target.files[0].name, src: src };
       return newPreview;
@@ -53,9 +53,8 @@ export default function FormImagePreview() {
         type="file"
         accept="image/*"
         id="preview"
-        onChange={onasdChange}
+        onChange={onChange}
       />
-      {/* <Image src={preview.src} /> */}
     </AddImageButtonWrapper>
   );
 }
