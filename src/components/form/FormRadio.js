@@ -18,20 +18,20 @@ export default function FormRadio({ attr, radio }) {
   const { width, height, onClick } = attr;
   return (
     <>
-      {radio.map((e, index) => (
+      {radio.map((item, index) => (
         <Container key={index}>
           <Radio
-            id={e.id}
-            name={e.name}
-            value={e.value}
-            defaultChecked={e.defaultChecked}
+            id={item.id}
+            name={item.name}
+            value={item.value}
+            defaultChecked={item.defaultChecked}
             onClick={onClick}
             width={width}
             height={height}
             readOnly
           />
-          <Label htmlFor={e.id} onClick={onClick}>
-            {e.text}
+          <Label htmlFor={item.id} onClick={onClick}>
+            {item.text}
           </Label>
         </Container>
       ))}
