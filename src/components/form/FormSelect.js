@@ -20,15 +20,15 @@ export default function FormSelect({ attr, option }) {
       width={width}
       height={height}
     >
-      {option.map((e, i) => {
+      {option.map((item, index) => {
         return (
           <option
-            key={i}
-            value={e.value}
-            selected={e.selected}
-            disabled={e.disabled}
+            key={index}
+            value={item.value}
+            selected={item.selected}
+            disabled={item.disabled}
           >
-            {e.name}
+            {item.name}
           </option>
         );
       })}
