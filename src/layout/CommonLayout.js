@@ -1,7 +1,7 @@
-import Admin from 'pages/admin/Admin';
 import styled from 'styled-components';
+import { Util } from 'utils';
 import Tab from './Tab';
-import { Util } from '../utils';
+import Admin from 'pages/admin/Admin';
 
 const Container = styled.div`
   display: flex;
