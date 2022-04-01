@@ -1,5 +1,5 @@
-import { FormDatePicker, FormToggle } from 'components';
 import { useEffect, useState } from 'react';
+import { FormDatePicker, FormToggle } from 'components';
 import ProductDeliveryStyled from './ProductDeliveryStyled';
 
 const {
@@ -20,12 +20,12 @@ export default function ProductDelivery() {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
 
-  const onStartChange = (e) => {
-    if (!e._d) {
+  const onStartChange = (event) => {
+    if (!event._d) {
       return;
     }
     setStartDate((old) => {
-      const start = e._d;
+      const start = event._d;
       const year = start.getFullYear();
       const month = start.getMonth() + 1;
       const day = start.getDate();
@@ -34,12 +34,12 @@ export default function ProductDelivery() {
     });
   };
 
-  const onEndChange = (e) => {
-    if (!e._d) {
+  const onEndChange = (event) => {
+    if (!event._d) {
       return;
     }
     setEndDate((old) => {
-      const start = e._d;
+      const start = event._d;
       const year = start.getFullYear();
       const month = start.getMonth() + 1;
       const day = start.getDate() + 1;
@@ -47,19 +47,6 @@ export default function ProductDelivery() {
       return newDate;
     });
   };
-
-  useEffect(() => {
-    if (reservation) {
-      setStart(false);
-      setReceipt(false);
-    }
-  }, [reservation]);
-
-  useEffect(() => {
-    if (start || receipt) {
-      setReservation(false);
-    }
-  }, [start, receipt]);
 
   const dateRangePickerAttr = {
     type: 'time',
@@ -82,6 +69,19 @@ export default function ProductDelivery() {
     start: startDate,
     end: endDate,
   };
+
+  useEffect(() => {
+    if (reservation) {
+      setStart(false);
+      setReceipt(false);
+    }
+  }, [reservation]);
+
+  useEffect(() => {
+    if (start || receipt) {
+      setReservation(false);
+    }
+  }, [start, receipt]);
 
   return (
     <>
