@@ -1,7 +1,7 @@
 import React, { memo, useState } from 'react';
-import { OptionSet } from '../../containers';
-import ProductOptionStyled from './ProductOptionStyled';
 import moment from 'moment';
+import { OptionSet } from 'pages/admin/containers';
+import ProductOptionStyled from './ProductOptionStyled';
 
 const {
   Container,
