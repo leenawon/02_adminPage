@@ -1,5 +1,5 @@
-import { FormInput } from 'components';
 import { useState } from 'react';
+import { FormInput } from 'components';
 import { Util } from 'utils';
 import ProductInfoNoticeStyled from './ProductInfoNoticeStyled';
 
@@ -58,14 +58,12 @@ export default function ProductInfoNotice() {
       </BigTitle>
       <Container>
         <Wrapper>
-          {/* Header - 제목과 삭제 버튼 */}
           <Header>
             <Title>정보 고시 {sequence}</Title>
             <HeaderButton onClick={deleteNotice}>삭제</HeaderButton>
           </Header>
           <TitleAndInput>
             <SubTitle>제품명 / 중량</SubTitle>
-            {/* FormInput component */}
             <InputWrapper>
               <FormInput
                 attr={{ placeholder: '제품명 / 중량을 입력해 주세요.' }}
@@ -104,7 +102,6 @@ export default function ProductInfoNotice() {
               />
             </InputWrapper>
           </TitleAndInput>
-          {/* 항목 추가 버튼 클릭 시 추가되는 FormInput */}
           {itemList.map((item, index) => {
             return (
               <CreateItem key={item.id} id={index}>
