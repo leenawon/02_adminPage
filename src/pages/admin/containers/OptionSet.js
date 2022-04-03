@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
-import { FormImagePreview } from '../../../components';
+import moment from 'moment';
+import { FormImagePreview } from 'components';
 import { OptionItem } from '.';
 import ProductOptionStyled from '../components/productOption/ProductOptionStyled';
-import moment from 'moment';
 
 const { OptionSetAddBtn, DeleteBtn, DeleteBtnWrapper } = ProductOptionStyled;
 
